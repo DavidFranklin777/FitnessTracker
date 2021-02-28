@@ -32,6 +32,10 @@ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Widgets Sql REQUIRED)
 #find_package(Qt$ REQUIRED COMPONENTS Core Quick Sql)
 #find_package(FindMYSQL.cmake)
 
+file(GLOB_RECURSE SRCS *.cpp)
+file(GLOB_RECURSE HDRS *.h)
+file(GLOB_RECURSE UIS *.ui)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -47,12 +51,17 @@ set(PROJECT_SOURCES
         datacontroller.h
         database.cpp
         database.h
-
+        displayinformation.cpp
+        displayinformation.h
+        displayinformation.ui
+        trackingmenu.cpp
+        trackingmenu.h
+        trackingmenu.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(MyFirstQt
-        ${PROJECT_SOURCES}
+        ${SRCS} ${HDRS} ${UIS}
     )
 else()
     if(ANDROID)
