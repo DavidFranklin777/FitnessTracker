@@ -15,8 +15,6 @@ public:
     explicit LoginScreen(QWidget *parent = nullptr);
     ~LoginScreen();
 
-    QString getUsername();
-
 private slots:
     void on_pushButton_clicked();
 

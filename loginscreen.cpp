@@ -6,7 +6,6 @@
 LoginScreen::LoginScreen(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::LoginScreen)
-  , m_Username("Dummy uninitialized")
 {
     ui->setupUi(this);
     QPixmap pix("D:/Softwares/Practice/QtGui/fitnesstrackerlogo");
@@ -18,10 +17,6 @@ LoginScreen::~LoginScreen()
     delete ui;
 }
 
-QString LoginScreen::getUsername()
-{
-    return m_Username;
-}
 
 void LoginScreen::on_pushButton_clicked()
 {
